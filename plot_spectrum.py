@@ -12,7 +12,6 @@ default_spectrum_layout = {
 }
 
 def setup_spectrum_layout(spectrum_layout):
-    print(spectrum_layout)
     mpl.rc('text', usetex = True)
     mpl.rc('font', **spectrum_layout['font'])
     mpl.rc('axes', **spectrum_layout['axes'])
@@ -53,9 +52,6 @@ if __name__ == '__main__':
     output_file = sys.argv[2]
     grouped_by_column = False if (len(sys.argv) > 3 and sys.argv[3].lower() == 'false') else True
     energy, value = load_spectral_data(input_file, 0, 2, grouped_by_column=grouped_by_column)
-
-    print(len(energy))
-    print(len(value))
     
     value_label = r'$E^{2}\times$Photon Flux'
     plot_spectrum(energy, value, value_label)
