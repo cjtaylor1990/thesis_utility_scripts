@@ -3,8 +3,8 @@ import sys
 from plot_spectrum import load_spectral_data, default_spectrum_layout, setup_spectrum_layout, save_and_clear_spectrum
 
 def compare_spectra(test_file, control_file, saveFile='', title=''):
-    test_energy, test_value = load_spectral_data(sys.argv[1], 0, 2, grouped_by_column=False)
-    control_energy, control_value = load_spectral_data(sys.argv[2], 0, 1, grouped_by_column=True)
+    test_energy, test_value = load_spectral_data(test_file, 0, 2, grouped_by_column=False)
+    control_energy, control_value = load_spectral_data(control_file, 0, 1, grouped_by_column=True)
 
     setup_spectrum_layout(default_spectrum_layout)
 
